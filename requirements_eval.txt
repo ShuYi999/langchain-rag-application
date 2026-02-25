@@ -1,0 +1,6 @@
+# Evaluation dependencies
+ragas==0.1.0
+datasets==2.15.0
+
+# Include core dependencies
+-r requirements.txt
