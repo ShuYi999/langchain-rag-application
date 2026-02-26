@@ -14,10 +14,11 @@ Make sure RAG_API.py is running on http://127.0.0.1:8000
 import streamlit as st
 import requests
 import json
+import os
 from typing import Dict, Any
 
-# Configuration
-API_URL = "http://127.0.0.1:8000"
+# Configuration - use environment variable for Docker compatibility
+API_URL = os.getenv("API_URL", "http://127.0.0.1:8000")
 
 # Page config
 st.set_page_config(
