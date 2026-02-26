@@ -1,0 +1,26 @@
+Shipping Information and Delivery Times
+
+Standard Shipping:
+- Delivery time: 3-5 business days for local deliveries
+- Cost: $5.99 for orders under $50
+- Free shipping on orders over $50
+
+Express Shipping:
+- Delivery time: 1-2 business days
+- Cost: $15.99 flat rate
+- Available for domestic orders only
+
+International Shipping:
+- Delivery time: 7-14 business days
+- Cost varies by destination
+- Customs fees may apply
+
+Tracking:
+- All shipments include tracking numbers
+- Tracking information is sent via email within 24 hours of shipment
+- Track your order on our website using your order number
+
+Damaged Items:
+- Damaged items must be reported within 48 hours of delivery
+- Photo documentation required
+- Replacement or refund will be issued after review

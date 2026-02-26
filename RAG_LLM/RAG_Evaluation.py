@@ -68,7 +68,7 @@ def setup_rag_system():
     print(f"  ✓ Split into {len(chunks)} chunks")
     
     # Create vector store
-    embeddings = OllamaEmbeddings(model="llama3.2:1b")
+    embeddings = OllamaEmbeddings(model="nomic-embed-text")
     vectorstore = FAISS.from_documents(chunks, embeddings)
     retriever = vectorstore.as_retriever(k=3)
     print(f"  ✓ Vector store created")
@@ -218,7 +218,7 @@ def evaluate_rag_system():
             dataset,
             metrics=metrics,
             llm=llm,
-            embeddings=OllamaEmbeddings(model="llama3.2:1b")
+            embeddings=OllamaEmbeddings(model="nomic-embed-text")
         )
         
         # Display results

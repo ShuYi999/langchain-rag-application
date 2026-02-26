@@ -32,9 +32,6 @@ desktop.ini
 chroma_db/
 vectorstore/
 
-# RAG_VLM (separate project, not tracked in this repo)
-RAG_VLM/
-
 # Logs
 *.log
 logs/

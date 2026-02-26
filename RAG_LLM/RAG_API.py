@@ -93,7 +93,7 @@ def create_vectorstore(docs: List[Document]):
     print(f"  ✓ Split into {len(chunks)} chunks")
     
     # Embeddings model (using free Ollama)
-    embeddings = OllamaEmbeddings(model="llama3.2:1b", base_url=OLLAMA_HOST)
+    embeddings = OllamaEmbeddings(model="nomic-embed-text", base_url=OLLAMA_HOST)
     print(f"  ✓ Initialized embeddings model (host: {OLLAMA_HOST})")
     
     # Build vectorstore with FAISS

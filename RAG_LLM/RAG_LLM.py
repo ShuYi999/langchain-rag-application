@@ -77,7 +77,7 @@ print("STEP 3: Creating Embeddings & Vector Store")
 print("="*70)
 print("Converting text to numerical vectors for similarity search...")
 
-embeddings = OllamaEmbeddings(model="llama3.2:1b")
+embeddings = OllamaEmbeddings(model="nomic-embed-text")
 
 print("Building FAISS vector store...")
 vectorstore = FAISS.from_documents(
