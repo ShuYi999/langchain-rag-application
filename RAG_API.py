@@ -26,6 +26,9 @@ from langchain.agents import Tool, AgentExecutor, create_react_agent
 from langchain.tools import tool
 import re
 
+# Get Ollama host from environment (for Docker compatibility)
+OLLAMA_HOST = os.getenv("OLLAMA_HOST", "http://localhost:11434")
+
 
 # -----------------------------
 # 1. Initialize FastAPI
@@ -90,8 +93,8 @@ def create_vectorstore(docs: List[Document]):
     print(f"  ✓ Split into {len(chunks)} chunks")
     
     # Embeddings model (using free Ollama)
-    embeddings = OllamaEmbeddings(model="llama3.2:1b")
-    print(f"  ✓ Initialized embeddings model")
+    embeddings = OllamaEmbeddings(model="llama3.2:1b", base_url=OLLAMA_HOST)
+    print(f"  ✓ Initialized embeddings model (host: {OLLAMA_HOST})")
     
     # Build vectorstore with FAISS
     vectorstore = FAISS.from_documents(chunks, embeddings)
@@ -124,9 +127,10 @@ retriever = vectorstore.as_retriever(k=3)
 # Initialize LLM (using free Ollama)
 llm = ChatOllama(
     model="llama3.2:1b",
-    temperature=0  # Deterministic answers
+    temperature=0,  # Deterministic answers
+    base_url=OLLAMA_HOST
 )
-print("✅ LLM initialized")
+print(f"✅ LLM initialized (host: {OLLAMA_HOST})")
 
 # Agent will be initialized lazily when needed
 agent_executor = None  # Initialized on first use of /agent endpoint
